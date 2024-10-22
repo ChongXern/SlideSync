@@ -1,0 +1,6 @@
+pytube
+opencv-python
+scikit-image
+pydub
+numpy
+yt_dlp
