@@ -1,12 +1,12 @@
 import yt_dlp
 import os
 
-def extract_audio_from_youtube(video_url, output_dir):
+def extract_audio_from_youtube(video_url, filename):
     video_id = video_url.split('=')[-1]
 
-    audio_filename = f"audio_{video_id}.m4a"
-    output_path = os.path.join(output_dir, audio_filename)
-
+    audio_filename = f"audio_{video_id}.mp3"
+    output_path = os.path.join(filename, audio_filename)
+    os.makedirs(filename, exist_ok=True)
     ydl_opts = {
             'format': 'bestaudio/best',
             'noplaylist': True,
@@ -26,7 +26,6 @@ def extract_audio_from_youtube(video_url, output_dir):
     return output_path
 
 video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-output_dir = "../data/audio"
-os.makedirs(output_dir, exist_ok=True)
-extract_audio_from_youtube(video_url, output_dir)
-
+filename = "../data/audio"
+#os.makedirs(filename, exist_ok=True)
+extract_audio_from_youtube(video_url, filename)
