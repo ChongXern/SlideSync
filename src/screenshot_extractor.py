@@ -39,7 +39,7 @@ def capture_screenshots(video_path, save_folder, video_id, interval=10):
 
     video.release()
     
-def extract_screenshots_from_youtube(video_url, filename):
+def extract_screenshots_from_youtube(video_url, save_folder):
     video_id = video_url.split('=')[-1]
     video_path, video_id = download_video(video_url, save_folder)
     capture_screenshots(video_path, save_folder, video_id)

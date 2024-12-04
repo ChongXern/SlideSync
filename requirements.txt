@@ -4,3 +4,5 @@ scikit-image
 pydub
 numpy
 yt_dlp
+youtube-transcript-api
+selenium
